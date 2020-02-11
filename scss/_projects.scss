@@ -1,0 +1,280 @@
+$myWidth: 1190px;
+$barHeight: 370px;
+
+main {
+    &#projects {
+        .pics {
+            //display: flex;
+            position: relative;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+
+            //resize: both;
+            //overflow: auto;
+
+            
+            .pic {
+                position: relative;
+                z-index: 5;
+                h1 {
+                    margin: 10% auto; 
+                    color: white;
+                    position: absolute;
+                    z-index: 20;
+                    font-size: 300%;
+                    text-align: center;
+                    text-overflow: clip;
+                    overflow: hidden;
+                    visibility: hidden;
+                }   
+            }
+            .pic:hover.pic:hover.pic:hover {
+                .overlay {
+                    position: absolute;
+                    background:rgba(68, 68, 68, 0.6);
+                }
+                transition: ease-in 0.2s;
+                h1 {
+                    visibility: visible;
+                }
+            }
+            .dim {
+                .overlay {
+                    position: absolute;
+                    background:rgba(68, 68, 68, 0.95);
+                }
+                transition: ease-in 0.2s;
+                h1 {
+                    visibility: hidden;
+                }
+                @include fade;
+            }
+            .lit {
+                .overlay {
+                    position: absolute;
+                    background:rgba(68, 68, 68, 0);
+                }
+                transition: ease-in 0.2s;
+                h1 {
+                    visibility: hidden;
+                }
+                @include fade;
+            }
+
+            .upper {
+                display: grid;
+                width: $myWidth;
+                grid-template-areas: 'fire gren yell';
+                grid-template-columns: 1fr 1fr 1fr;
+
+                * {
+                    width: 300px;
+                    height: 200px;
+                    margin-right: 20px;
+                    margin-bottom: 20px;
+                }
+
+                .firework {
+                    grid-area: fire;
+                    //float: left;
+                    content: '';
+                    background: url('../assets/fireworks.png');
+                }
+                .green {
+                    grid-area: gren;
+                    //float: left;
+                    content: '';
+                    background: url('../assets/portrait.png');
+                }
+                .yellow {
+                    grid-area: yell;
+                    content: '';
+                    background: url('../assets/portrait.png');
+                }
+            }
+            .wrapper {
+                position: relative;
+                z-index: 3;
+                display: grid;
+                height: $myWidth;
+
+                .lower {
+                    display: grid;
+                    position: absolute;
+                    width: $myWidth;
+                    grid-template-areas: 'blu redd oof';
+                    grid-template-columns: 1fr 1fr 1fr;
+
+                    transform: translate3d(0, 0, 0);
+                    //position: absolute;
+                    z-index: 20;
+
+                    @include fade;
+
+                    * {
+                        width: 300px;
+                        height: 200px;
+                        margin-right: 20px;
+                    }
+
+                    &.active {
+                        content: '';
+                        transform: translate3d(0, ($barHeight + 20px), 0);
+                    }
+
+
+                    .blue {
+                        grid-area: blu;
+                        content: '';
+                        background: url('../assets/portrait.png');
+                    }
+
+                    .red {
+                        grid-area: redd;
+                        content: '';
+                        background: url('../assets/portrait.png');
+                    }
+
+                    .oof {
+                        grid-area: oof;
+                        content: '';
+                        background: url('../assets/portrait.png');
+                    }
+                }
+
+                .bars {
+                    display: grid;
+                    position: absolute;
+                    width: 100%;
+                    height: $barHeight;
+                    
+                    visibility: hidden;
+                    transform: translate3d(0, ($barHeight + 20px), 0);
+                    @include fadE;
+                    z-index: 5;
+
+                    .top {
+                        z-index: 10;
+                        .text {
+                            visibility: inherit;
+                        }
+                    }
+
+                    .bar {
+                        position: absolute;
+                        display: grid;
+                        width: 1190px;
+                        height: $barHeight;
+                        grid-template-areas: 'img txt';
+                        grid-template-columns: 1fr 1fr;
+                    }
+
+                    .text {
+                        grid-area: txt;
+                        text-align: right;
+                        content: '';
+                        position: relative;
+                        //z-index: inherit + 1;
+                        visibility: hidden;
+
+                        color: red;
+                    }
+                    
+
+                    .img {
+                        grid-area: img;
+                        content: '';
+                        position: absolute;
+                        height: $barHeight;
+                        width: 650px;
+                        max-width: 100%;
+                        max-height: 100%;
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
+
+                            background: linear-gradient(to left, rgba(68, 68, 68, 1) 0%, rgba(68, 68, 68, 0.3) 49%, rgba(255, 255, 255, 0) 100%);
+                        }
+                    }
+
+                    .firework {
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: block;
+                        .img {
+                            background-image: url('../assets/fireworks_detailed.png');
+                        }    
+                    }
+
+                    .blue {
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: block;
+                        .img {
+                            background-image: url('../assets/fireworks_detailed.png');
+                        }    
+                    }
+
+                    .green {
+                        background-color: green;
+                        position: absolute;
+                        height: 180px;
+                        width: 500px;
+                    }
+
+                    .yellow {
+                        background-color: yellow;
+                        position: absolute;
+                        height: 180px;
+                        width: 500px;
+                    }
+
+                    .red {
+                        background-color: red;
+                        position: absolute;
+                        height: 180px;
+                        width: 500px;
+                    }
+
+                    .oof {
+                        background-color: #42059d;
+                        position: absolute;
+                        height: 180px;
+                        width: 500px;
+                    }
+
+                    &.active {
+                        visibility: visible;
+                        transform: translate3d(0, 0, 0);
+                        @include fadE;
+                    }
+                }
+
+                &.transitioning {
+                    .bars {
+                        visibility: hidden;
+                        transform: translate3d(0, 200px, 0);
+                        
+                    }
+                    .lower {
+                        transform: translate3d(0, 0, 0);
+                    }
+                }
+
+            }
+        }
+
+        .bars {
+
+        }
+
+        
+    }
+}

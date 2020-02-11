@@ -18,6 +18,7 @@ document.addEventListener('mousemove', (event) => {
     console.log(dist);
 });*/
 
+
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu');
 const menuNav = document.querySelector('.menu-nav');
@@ -25,7 +26,11 @@ const menuBranding = document.querySelector('.menu-branding');
 
 const navItems = document.querySelectorAll('.nav-item');
 
+const nightBtn = document.getElementById('nice');
+const mainPart = document.getElementById('home');
+
 let showMenu = false;
+let nightMode = true;
 
 menuBtn.addEventListener('click', () => {
     if(!showMenu) {
@@ -44,5 +49,19 @@ menuBtn.addEventListener('click', () => {
         navItems.forEach(item => item.classList.remove('show'));
         
         showMenu = false;
+    }
+});
+
+nightBtn.addEventListener('click', () => {
+    if (!nightMode) {
+        mainPart.classList.add('night');
+        mainPart.classList.remove('day');
+        nightBtn.className = "fas fa-lightbulb fa-2x";
+        nightMode = !nightMode;
+    } else {
+        mainPart.classList.remove('night');
+        mainPart.classList.add('day');
+        nightBtn.className = "far fa-lightbulb fa-2x";
+        nightMode = !nightMode;
     }
 });

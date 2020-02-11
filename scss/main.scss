@@ -1,5 +1,7 @@
 @import 'config';
 @import 'menu';
+@import 'mobile';
+@import 'projects';
 
 * {
     box-sizing: border-box;
@@ -8,7 +10,7 @@
 body {
     @include background;
     background: $primary-color;
-    color: #ffffff;
+    color: set-text-color($primary-color);
     height: 100%;
     margin: 0;
     font-family: 'Raleway', 'sans-serif';
@@ -37,7 +39,7 @@ a {
 
 header {
     position: fixed;
-    z-index: 2;
+    z-index: 30;
     width: 100%;
 }
 
@@ -54,17 +56,220 @@ main {
 
         a {
             padding: 0.4rem;
-
+            @include fade;
             &:hover {
                 color: $secondary-color;
-                @include fade;
             }
         }
     }
+    
+    &.night {
+        $primary-color: #444;
+    }
+
+    &.day {
+        $primary-color: #fff;
+    }
+
     &#home {
         overflow:hidden;
         h1 {
             margin-top: 20vh;
         }
+    }
+}
+
+.about-info {
+    display: grid;
+    gap: 30px;
+    grid-template-areas: 
+    'bio-img bio bio'
+    'skills-group skills-group skills-group';
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.bio-img {
+    grid-area: bio-img;
+    margin: auto;
+    border-radius: 50%;
+    border: 3px $secondary-color solid;
+}
+
+.bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+}
+
+$skill-bg: rgb(31, 46, 45);
+
+.skills-group {
+    grid-area: skills-group;
+    display: grid;
+    grid-template-areas: '. skills_h .'
+                         'general . lvl'
+                         'suba . lvl'
+                         '. . lvl';
+
+    grid-template-columns: repeat(3, 1fr);
+
+    // box look
+    .box {
+        @include border-radius(5px);
+        position: relative;
+        padding: 10px 10px 10px 10px;
+        background: $skill-bg;
+        margin: 5px;
+        border: 1px $secondary-color solid;
+        cursor: pointer;
+
+        &.selected {
+            @include aboutTrans;
+            background: $secondary-color;
+        }
+    }
+
+    // Grid sass
+    .skills_h {
+        grid-area: skills_h;
+        text-align: center;
+    }
+
+    .general {
+        grid-area: general;
+        display: grid;
+        grid-template-areas: 'call backend frontend nw';
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .nw {grid-area: nw; .box{white-space: nowrap; overflow: hidden;}}
+        .backend {grid-area: backend;}
+        .frontend {grid-area: frontend;}
+        .all {grid-area: call;}
+    }
+
+    .sub {
+        grid-area: suba;
+        display: grid;
+        grid-template-areas: 'sql node html cpp java'
+                             'expr mongo sass jasc py';
+        
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        .sql {grid-area:sql};
+        .sass {grid-area: sass;}
+        .express {grid-area: expr;}
+        .python {grid-area: py;}
+        .cpp {grid-area: cpp;}
+        .javasc {grid-area: jasc;}
+        .java {grid-area: java;}
+        .mongo {grid-area: mongo;}
+        .node {grid-area: node;}
+        .html {grid-area: html;}
+        // Transitioning sass
+        .hidden {
+            transform: translate(-200%, 0);
+            z-index: -3;
+            visibility: hidden;
+        }
+
+        .show {
+            z-index: 1;
+            transition: all 0.25s ease-out;
+            transform: translate(0, 0);
+        }
+    }
+
+    .lvl {
+        grid-area: lvl;
+        grid-template-areas: 'title . .'
+                             '. bars .'
+                             '. subh .'
+                             'subt subt subt';
+        
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+
+        &.show {
+            visibility: visible;
+            transition: all 0.25s ease-out;
+            //transform: translate(0, 0);
+        }
+
+        &.hidden {
+            visibility: hidden;
+            transition: all 0s;
+            //transform: translate(200%, 0);           
+        }
+
+        .title {grid-area: title; text-align: center;}
+
+        .bars {
+            grid-area: bars;
+            display: flex;
+            position: relative;
+            transform: translate(10%, 0);
+            .bar {
+                
+                width: 40px;
+                height: 10px;
+                margin: 0 5px 0px 5px;
+
+                background: darken(#444, 3);
+                
+                &.lit {
+                    &:nth-child(1) {
+                        transition: 0.1s 0s;
+                    }
+                    &:nth-child(2) {
+                        transition: 0.1s 0.1s;
+                    }
+                    &:nth-child(3) {
+                        transition: 0.1s 0.2s;
+                    }
+                    &:nth-child(4) {
+                        transition: 0.1s 0.3s;
+                    }
+                    &:nth-child(5) {
+                        transition: 0.1s 0.4s;
+                    }
+
+                    background: #fff;
+                }
+
+                &:nth-child(1) {
+                    transition: 0.1s 0.4s;
+                }
+                &:nth-child(2) {
+                    transition: 0.1s 0.3s;
+                }
+                &:nth-child(3) {
+                    transition: 0.1s 0.2s;
+                }
+                &:nth-child(4) {
+                    transition: 0.1s 0.1s;
+                }
+                &:nth-child(5) {
+                    transition: 0.1s 0s;
+                }
+                background: darken(#444, 3);
+            }
+
+            .edge {
+                &.l {
+                    border-top-left-radius: 15px;
+                    border-bottom-left-radius: 15px;
+                }
+
+                &.r {
+                    border-top-right-radius: 15px;
+                    border-bottom-right-radius: 15px;
+                }
+            }
+
+        }
+
+        .subh {grid-area: subh;}
+
+        .subt {grid-area: subt;}
+
     }
 }
