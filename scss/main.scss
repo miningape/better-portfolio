@@ -2,6 +2,7 @@
 @import 'menu';
 @import 'mobile';
 @import 'projects';
+@import 'contact';
 
 * {
     box-sizing: border-box;
@@ -27,8 +28,8 @@ h1, h2, h3 {
     }
     &.sm-heading {
         margin-bottom: 2rem;
-        padding: 0.2rem 1rem;
-        background: rgba(lighten($primary-color, 2), 0.5);
+        padding: 0.2rem 0rem;
+        background: rgba(lighten($primary-color, 2), 0);
     }
 }
 
@@ -77,6 +78,21 @@ main {
             margin-top: 20vh;
         }
     }
+
+    .info {
+        position: relative;
+        visibility: hidden;
+        .show {
+            visibility: visible;
+        }
+        * {
+            position: absolute;
+        }
+    }
+
+    .prac {
+        padding-top: 1em;
+    }
 }
 
 .about-info {
@@ -118,9 +134,15 @@ $skill-bg: rgb(31, 46, 45);
         position: relative;
         padding: 10px 10px 10px 10px;
         background: $skill-bg;
+        
         margin: 5px;
         border: 1px $secondary-color solid;
         cursor: pointer;
+
+        &.head {
+            background: darken($skill-bg, 10);
+            border: 2px $secondary-color solid;
+        }
 
         &.selected {
             @include aboutTrans;
@@ -169,6 +191,7 @@ $skill-bg: rgb(31, 46, 45);
             transform: translate(-200%, 0);
             z-index: -3;
             visibility: hidden;
+            transition: all 0.05s ease;
         }
 
         .show {
@@ -188,6 +211,7 @@ $skill-bg: rgb(31, 46, 45);
         grid-template-rows: repeat(4, 1fr);
         grid-template-columns: repeat(3, 1fr);
 
+
         &.show {
             visibility: visible;
             transition: all 0.25s ease-out;
@@ -196,7 +220,7 @@ $skill-bg: rgb(31, 46, 45);
 
         &.hidden {
             visibility: hidden;
-            transition: all 0s;
+            transition: all 0.25s;
             //transform: translate(200%, 0);           
         }
 
@@ -206,11 +230,14 @@ $skill-bg: rgb(31, 46, 45);
             grid-area: bars;
             display: flex;
             position: relative;
-            transform: translate(10%, 0);
+            justify-content: center;
+            padding-top: 10px;
+            //left: 100%;
+            
             .bar {
                 
                 width: 40px;
-                height: 10px;
+                height: 15px;
                 margin: 0 5px 0px 5px;
 
                 background: darken(#444, 3);

@@ -40,15 +40,15 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    opacity: 0.9;
-    background: #3c3c3c;
+    background: rgba(68, 68, 68, 0.95);
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.45s ease; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: rgba(68, 68, 68, 0.9);
+    opacity: 0.97;
+    background: #3c3c3c;
     transform: translate3d(0, 100%, 0);
     transition: all 0.45s ease; }
     .menu-branding.show {
@@ -63,7 +63,7 @@
       opacity: 1; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
-    transition: 1.5s ease; }
+    transition: 0.3s ease; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
@@ -77,7 +77,7 @@
     font-weight: 300;
     color: white;
     text-decoration: none;
-    transition: all 0.45s ease; }
+    transition: 0.4s ease; }
     .menu .nav-link:hover {
       color: #ff943d; }
 
@@ -116,192 +116,309 @@
     .menu-branding .portrait {
       background: url(../assets/img_small.png);
       height: 150px;
-      width: 150px; } }
+      width: 150px; }
+  .about-info.about-info {
+    display: grid;
+    gap: 30px;
+    grid-template-areas: 'bio-img bio-img' 'bio bio' 'skills-group skills-group';
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center; }
+  .skills-group.skills-group.skills-group {
+    grid-area: skills-group;
+    display: grid;
+    grid-template-areas: 'skills_h' 'general' 'suba' 'lvl' 'lvl' 'lvl';
+    grid-template-columns: repeat(1, 1fr); }
+    .skills-group.skills-group.skills-group .lvl {
+      padding-top: 20px; }
+  .t1.t1.t1.t1 {
+    gap: 200px; } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
-    margin-top: 15vh; } }
+    margin-top: 15vh; }
+  .about-info.about-info {
+    display: grid;
+    gap: 30px;
+    grid-template-areas: 'bio-img bio-img' 'bio bio' 'skills-group skills-group';
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center; }
+  .skills-group.skills-group.skills-group {
+    grid-area: skills-group;
+    display: grid;
+    grid-template-areas: 'skills_h' 'general' 'suba' 'lvl' 'lvl' 'lvl';
+    grid-template-columns: repeat(1, 1fr); }
+    .skills-group.skills-group.skills-group .lvl {
+      padding-top: 20px; }
+  .t1.t1.t1.t1 {
+    top: 20px; } }
 
-main#projects .pics {
-  position: relative;
-  align-items: center;
-  height: 100%;
+main#projects {
+  margin: auto;
   width: 100%; }
-  main#projects .pics .pic {
+  main#projects h1 {
+    text-align: center; }
+  main#projects .pics {
     position: relative;
-    z-index: 5; }
-    main#projects .pics .pic h1 {
-      margin: 10% auto;
-      color: white;
-      position: absolute;
-      z-index: 20;
-      font-size: 300%;
-      text-align: center;
-      text-overflow: clip;
-      overflow: hidden;
-      visibility: hidden; }
-  main#projects .pics .pic:hover.pic:hover.pic:hover {
-    transition: ease-in 0.2s; }
-    main#projects .pics .pic:hover.pic:hover.pic:hover .overlay {
-      position: absolute;
-      background: rgba(68, 68, 68, 0.6); }
-    main#projects .pics .pic:hover.pic:hover.pic:hover h1 {
-      visibility: visible; }
-  main#projects .pics .dim {
-    transition: ease-in 0.2s;
-    transition: all 0.45s ease; }
-    main#projects .pics .dim .overlay {
-      position: absolute;
-      background: rgba(68, 68, 68, 0.95); }
-    main#projects .pics .dim h1 {
-      visibility: hidden; }
-  main#projects .pics .lit {
-    transition: ease-in 0.2s;
-    transition: all 0.45s ease; }
-    main#projects .pics .lit .overlay {
-      position: absolute;
-      background: rgba(68, 68, 68, 0); }
-    main#projects .pics .lit h1 {
-      visibility: hidden; }
-  main#projects .pics .upper {
-    display: grid;
-    width: 1190px;
-    grid-template-areas: 'fire gren yell';
-    grid-template-columns: 1fr 1fr 1fr; }
-    main#projects .pics .upper * {
-      width: 300px;
-      height: 200px;
-      margin-right: 20px;
-      margin-bottom: 20px; }
-    main#projects .pics .upper .firework {
-      grid-area: fire;
-      content: '';
-      background: url("../assets/fireworks.png"); }
-    main#projects .pics .upper .green {
-      grid-area: gren;
-      content: '';
-      background: url("../assets/portrait.png"); }
-    main#projects .pics .upper .yellow {
-      grid-area: yell;
-      content: '';
-      background: url("../assets/portrait.png"); }
-  main#projects .pics .wrapper {
-    position: relative;
-    z-index: 3;
-    display: grid;
-    height: 1190px; }
-    main#projects .pics .wrapper .lower {
-      display: grid;
-      position: absolute;
-      width: 1190px;
-      grid-template-areas: 'blu redd oof';
-      grid-template-columns: 1fr 1fr 1fr;
-      transform: translate3d(0, 0, 0);
-      z-index: 20;
+    align-items: center;
+    height: 100%;
+    width: 100%; }
+    main#projects .pics .pic {
+      position: relative;
+      z-index: 5;
+      align-items: center; }
+      main#projects .pics .pic h1 {
+        width: 100%;
+        height: 100%;
+        margin: 10% auto;
+        color: white;
+        position: absolute;
+        z-index: 20;
+        font-size: 300%;
+        text-align: center;
+        text-overflow: clip;
+        overflow: hidden;
+        visibility: hidden; }
+      main#projects .pics .pic .overlay {
+        width: 100%;
+        height: 100%; }
+      main#projects .pics .pic .over-link {
+        position: absolute;
+        width: 100%;
+        height: 100%; }
+    main#projects .pics .pic:hover.pic:hover.pic:hover {
+      transition: ease-in 0.2s; }
+      main#projects .pics .pic:hover.pic:hover.pic:hover .overlay {
+        position: absolute;
+        background: rgba(68, 68, 68, 0.6); }
+      main#projects .pics .pic:hover.pic:hover.pic:hover h1 {
+        visibility: visible; }
+    main#projects .pics .dim {
+      transition: ease-in 0.2s;
       transition: all 0.45s ease; }
-      main#projects .pics .wrapper .lower * {
+      main#projects .pics .dim .overlay {
+        position: absolute;
+        background: rgba(68, 68, 68, 0.95); }
+      main#projects .pics .dim h1 {
+        visibility: hidden; }
+    main#projects .pics .lit {
+      transition: ease-in 0.2s;
+      transition: all 0.45s ease; }
+      main#projects .pics .lit .overlay {
+        position: absolute;
+        background: rgba(68, 68, 68, 0); }
+      main#projects .pics .lit h1 {
+        visibility: hidden; }
+    main#projects .pics .upper {
+      display: grid;
+      width: 1190px;
+      grid-template-areas: 'blu gren redd';
+      grid-template-columns: 1fr 1fr 1fr;
+      z-index: 20; }
+      main#projects .pics .upper .pic {
         width: 300px;
         height: 200px;
-        margin-right: 20px; }
-      main#projects .pics .wrapper .lower.active {
-        content: '';
-        transform: translate3d(0, 390px, 0); }
-      main#projects .pics .wrapper .lower .blue {
+        margin-right: 20px;
+        margin-bottom: 20px; }
+        main#projects .pics .upper .pic.mobile {
+          transition: ease-in 0.2s; }
+          main#projects .pics .upper .pic.mobile .overlay {
+            position: absolute;
+            background: rgba(68, 68, 68, 0.6); }
+          main#projects .pics .upper .pic.mobile h1 {
+            visibility: visible; }
+      main#projects .pics .upper .frontend {
         grid-area: blu;
         content: '';
-        background: url("../assets/portrait.png"); }
-      main#projects .pics .wrapper .lower .red {
+        background: url("../assets/frontend.png"); }
+      main#projects .pics .upper .auto {
         grid-area: redd;
         content: '';
-        background: url("../assets/portrait.png"); }
-      main#projects .pics .wrapper .lower .oof {
-        grid-area: oof;
+        background: url("../assets/rest.png");
+        justify-content: center; }
+      main#projects .pics .upper .backend {
+        grid-area: gren;
         content: '';
-        background: url("../assets/portrait.png"); }
-    main#projects .pics .wrapper .bars {
+        background: url("../assets/backend.png"); }
+    main#projects .pics .wrapper {
+      position: relative;
+      z-index: 3;
       display: grid;
-      position: absolute;
-      width: 100%;
-      height: 370px;
-      visibility: hidden;
-      transform: translate3d(0, 390px, 0);
-      transition: all 0.25s ease-in-out;
-      z-index: 5; }
-      main#projects .pics .wrapper .bars .top {
-        z-index: 10; }
-        main#projects .pics .wrapper .bars .top .text {
-          visibility: inherit; }
-      main#projects .pics .wrapper .bars .bar {
-        position: absolute;
+      width: 100%; }
+      main#projects .pics .wrapper .lower {
         display: grid;
-        width: 1190px;
-        height: 370px;
-        grid-template-areas: 'img txt';
-        grid-template-columns: 1fr 1fr; }
-      main#projects .pics .wrapper .bars .text {
-        grid-area: txt;
-        text-align: right;
-        content: '';
-        position: relative;
-        visibility: hidden;
-        color: red; }
-      main#projects .pics .wrapper .bars .img {
-        grid-area: img;
-        content: '';
         position: absolute;
+        width: 1190px;
+        grid-template-areas: 'fire yell oof';
+        grid-template-columns: 1fr 1fr 1fr;
+        transform: translate3d(0, 0, 0);
+        z-index: 20;
+        transition: all 0.45s ease; }
+        main#projects .pics .wrapper .lower .pic {
+          width: 300px;
+          height: 200px;
+          margin-right: 20px;
+          margin-bottom: 20px; }
+          main#projects .pics .wrapper .lower .pic.mobile {
+            transition: ease-in 0.2s; }
+            main#projects .pics .wrapper .lower .pic.mobile .overlay {
+              position: absolute;
+              background: rgba(68, 68, 68, 0.6); }
+            main#projects .pics .wrapper .lower .pic.mobile h1 {
+              visibility: visible; }
+        main#projects .pics .wrapper .lower * {
+          width: 300px;
+          height: 200px;
+          margin-right: 20px; }
+        main#projects .pics .wrapper .lower.active {
+          content: '';
+          transform: translate3d(0, 390px, 0); }
+        main#projects .pics .wrapper .lower .firework {
+          grid-area: fire;
+          content: '';
+          background: url("../assets/fireworks.png"); }
+        main#projects .pics .wrapper .lower .frequency {
+          grid-area: yell;
+          content: '';
+          background: url("../assets/ard.png"); }
+        main#projects .pics .wrapper .lower .path {
+          grid-area: oof;
+          content: '';
+          background: url("../assets/path.png"); }
+      main#projects .pics .wrapper .bars {
+        display: grid;
+        position: absolute;
+        width: 100%;
         height: 370px;
-        width: 650px;
-        max-width: 100%;
-        max-height: 100%; }
-        main#projects .pics .wrapper .bars .img:after {
+        visibility: hidden;
+        transform: translate3d(0, 390px, 0);
+        transition: all 0.25s ease-in-out;
+        z-index: 5; }
+        main#projects .pics .wrapper .bars .top {
+          z-index: 10; }
+          main#projects .pics .wrapper .bars .top .text {
+            visibility: inherit; }
+        main#projects .pics .wrapper .bars .bar {
+          position: absolute;
+          display: grid;
+          width: 1190px;
+          height: 370px;
+          grid-template-areas: 'img txt';
+          grid-template-columns: 1fr 1fr; }
+        main#projects .pics .wrapper .bars .text {
+          grid-area: txt;
+          text-align: left;
+          content: '';
+          position: relative;
+          padding-left: 30px;
+          width: 500px;
+          float: right;
+          visibility: hidden;
+          color: white; }
+          main#projects .pics .wrapper .bars .text a {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center; }
+        main#projects .pics .wrapper .bars .img {
+          grid-area: img;
           content: '';
           position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          background: linear-gradient(to left, #444444 0%, rgba(68, 68, 68, 0.3) 49%, rgba(255, 255, 255, 0) 100%); }
-      main#projects .pics .wrapper .bars .firework {
-        max-width: 100%;
-        max-height: 100%;
-        display: block; }
-        main#projects .pics .wrapper .bars .firework .img {
-          background-image: url("../assets/fireworks_detailed.png"); }
-      main#projects .pics .wrapper .bars .blue {
-        max-width: 100%;
-        max-height: 100%;
-        display: block; }
-        main#projects .pics .wrapper .bars .blue .img {
-          background-image: url("../assets/fireworks_detailed.png"); }
-      main#projects .pics .wrapper .bars .green {
-        background-color: green;
-        position: absolute;
-        height: 180px;
-        width: 500px; }
-      main#projects .pics .wrapper .bars .yellow {
-        background-color: yellow;
-        position: absolute;
-        height: 180px;
-        width: 500px; }
-      main#projects .pics .wrapper .bars .red {
-        background-color: red;
-        position: absolute;
-        height: 180px;
-        width: 500px; }
-      main#projects .pics .wrapper .bars .oof {
-        background-color: #42059d;
-        position: absolute;
-        height: 180px;
-        width: 500px; }
-      main#projects .pics .wrapper .bars.active {
-        visibility: visible;
-        transform: translate3d(0, 0, 0);
-        transition: all 0.25s ease-in-out; }
-    main#projects .pics .wrapper.transitioning .bars {
-      visibility: hidden;
-      transform: translate3d(0, 200px, 0); }
-    main#projects .pics .wrapper.transitioning .lower {
-      transform: translate3d(0, 0, 0); }
+          height: 370px;
+          width: 650px;
+          max-width: 100%;
+          max-height: 100%; }
+          main#projects .pics .wrapper .bars .img:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to left, #444444 0%, rgba(68, 68, 68, 0.3) 49%, rgba(255, 255, 255, 0) 100%); }
+        main#projects .pics .wrapper .bars .firework {
+          max-width: 100%;
+          max-height: 100%;
+          display: block; }
+          main#projects .pics .wrapper .bars .firework .img {
+            background-image: url("../assets/fireworks_detailed.png"); }
+        main#projects .pics .wrapper .bars .frontend {
+          max-width: 100%;
+          max-height: 100%;
+          display: block; }
+          main#projects .pics .wrapper .bars .frontend .img {
+            background-image: url("../assets/jscode.png"); }
+        main#projects .pics .wrapper .bars .backend {
+          max-width: 100%;
+          max-height: 100%;
+          display: block; }
+          main#projects .pics .wrapper .bars .backend .img {
+            background-image: url("../assets/node.png"); }
+        main#projects .pics .wrapper .bars .path {
+          max-width: 100%;
+          max-height: 100%;
+          display: block; }
+          main#projects .pics .wrapper .bars .path .img {
+            background-image: url("../assets/gref.png"); }
+        main#projects .pics .wrapper .bars .auto {
+          max-width: 100%;
+          max-height: 100%;
+          display: block; }
+          main#projects .pics .wrapper .bars .auto .img {
+            background-image: url("../assets/books.png"); }
+        main#projects .pics .wrapper .bars .frequency {
+          max-width: 100%;
+          max-height: 100%;
+          display: block; }
+          main#projects .pics .wrapper .bars .frequency .img {
+            background-image: url("../assets/ardui.png"); }
+          main#projects .pics .wrapper .bars .frequency:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #444; }
+        main#projects .pics .wrapper .bars.active {
+          visibility: visible;
+          transform: translate3d(0, 0, 0);
+          transition: all 0.25s ease-in-out; }
+      main#projects .pics .wrapper.transitioning .bars {
+        visibility: hidden;
+        transform: translate3d(0, 200px, 0); }
+      main#projects .pics .wrapper.transitioning .lower {
+        transform: translate3d(0, 0, 0); }
+
+main#contact {
+  text-align: center; }
+  main#contact .mydetails {
+    font-size: 1.3em; }
+  main#contact .titl {
+    position: relative; }
+    main#contact .titl .t1 {
+      z-index: 5;
+      top: 40px;
+      position: relative; }
+    main#contact .titl .lg-heading {
+      z-index: 4;
+      padding-top: 0px;
+      position: relative; }
+  main#contact .t2 {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    font-size: 1.8em; }
+  main#contact .side * {
+    display: inline-block;
+    transition: 0.08s ease-in; }
+    main#contact .side *:hover {
+      color: #ff943d; }
+    main#contact .side * div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 30px; }
+      main#contact .side * div h2 {
+        vertical-align: middle;
+        padding-left: 10px; }
 
 * {
   box-sizing: border-box; }
@@ -334,8 +451,8 @@ h1, h2, h3 {
     font-size: 6rem; }
   h1.sm-heading, h2.sm-heading, h3.sm-heading {
     margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
-    background: rgba(73, 73, 73, 0.5); }
+    padding: 0.2rem 0rem;
+    background: rgba(73, 73, 73, 0); }
 
 a {
   color: #fff;
@@ -363,6 +480,15 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+  main .info {
+    position: relative;
+    visibility: hidden; }
+    main .info .show {
+      visibility: visible; }
+    main .info * {
+      position: absolute; }
+  main .prac {
+    padding-top: 1em; }
 
 .about-info {
   display: grid;
@@ -396,6 +522,9 @@ main {
     margin: 5px;
     border: 1px #ff943d solid;
     cursor: pointer; }
+    .skills-group .box.head {
+      background: #0a100f;
+      border: 2px #ff943d solid; }
     .skills-group .box.selected {
       transition: all 0.2s ease-in;
       background: #ff943d; }
@@ -447,7 +576,8 @@ main {
     .skills-group .sub .hidden {
       transform: translate(-200%, 0);
       z-index: -3;
-      visibility: hidden; }
+      visibility: hidden;
+      transition: all 0.05s ease; }
     .skills-group .sub .show {
       z-index: 1;
       transition: all 0.25s ease-out;
@@ -462,7 +592,7 @@ main {
       transition: all 0.25s ease-out; }
     .skills-group .lvl.hidden {
       visibility: hidden;
-      transition: all 0s; }
+      transition: all 0.25s; }
     .skills-group .lvl .title {
       grid-area: title;
       text-align: center; }
@@ -470,10 +600,11 @@ main {
       grid-area: bars;
       display: flex;
       position: relative;
-      transform: translate(10%, 0); }
+      justify-content: center;
+      padding-top: 10px; }
       .skills-group .lvl .bars .bar {
         width: 40px;
-        height: 10px;
+        height: 15px;
         margin: 0 5px 0px 5px;
         background: #3c3c3c;
         background: #3c3c3c; }

@@ -27,8 +27,9 @@ let show_backend    = false;
 let show_frontend   = false;
 let show_general    = false;
 let show_skill      = false;
-let show_all        = true;
+let show_all        = false;
 
+// Read Data From JS Object For Text
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
@@ -44,14 +45,18 @@ function readTextFile(file, callback) {
     
 }
 
+// Make the skill buttons clickable
 theSkills.forEach((skill) => {
-    if (skill.classList.contains('hidden')) {
+    /*if (skill.classList.contains('hidden')) {
         skill.classList.remove('hidden');
 
         skill.classList.add('show');
 
-        addClick(skill);
-    }
+        
+    }*/
+
+    addClick(skill);
+
 });
 
 function addClick(item) {
@@ -83,7 +88,9 @@ function addClick(item) {
     });
 }
 
+// "All" button code
 allButton.addEventListener('click', () => {
+    // If nothing is open
     if (!show_all) {
         theSkills.forEach((skill) => {
             if (skill.classList.contains('hidden')) {
@@ -95,16 +102,37 @@ allButton.addEventListener('click', () => {
             }
         });
 
+        // Deselect every button
         document.querySelectorAll('.box').forEach((box) => {
             if (box.classList.contains('selected')) {
                 box.classList.remove('selected');
             }
         });
 
+        // Select "All" button
         let boxStyling = allButton.querySelector('.box');
         boxStyling.classList.add('selected');
 
         show_all = true;
+        show_backend = false;
+        show_frontend = false;
+        show_general = false;
+    } else {
+        theSkills.forEach((skill) => {
+            if (skill.classList.contains('show')) {
+                skill.classList.remove('show');
+
+                skill.classList.add('hidden');
+            }
+        });
+
+        document.querySelectorAll('.box').forEach((box) => {
+            if (box.classList.contains('selected')) {
+                box.classList.remove('selected');
+            }
+        });
+
+        show_all = false;
         show_backend = false;
         show_frontend = false;
         show_general = false;

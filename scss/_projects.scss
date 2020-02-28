@@ -3,6 +3,11 @@ $barHeight: 370px;
 
 main {
     &#projects {
+        margin: auto;
+        width: 100%;
+        h1 {
+            text-align: center;
+        }
         .pics {
             //display: flex;
             position: relative;
@@ -17,7 +22,10 @@ main {
             .pic {
                 position: relative;
                 z-index: 5;
+                align-items: center;
                 h1 {
+                    width: 100%;
+                    height: 100%;
                     margin: 10% auto; 
                     color: white;
                     position: absolute;
@@ -28,6 +36,17 @@ main {
                     overflow: hidden;
                     visibility: hidden;
                 }   
+
+                .overlay {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .over-link {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%
+                }
             }
             .pic:hover.pic:hover.pic:hover {
                 .overlay {
@@ -65,50 +84,84 @@ main {
             .upper {
                 display: grid;
                 width: $myWidth;
-                grid-template-areas: 'fire gren yell';
+                grid-template-areas: 'blu gren redd';
                 grid-template-columns: 1fr 1fr 1fr;
+                z-index: 20;
 
-                * {
+                .pic {
                     width: 300px;
                     height: 200px;
                     margin-right: 20px;
                     margin-bottom: 20px;
+
+                    &.mobile {
+                        .overlay {
+                            position: absolute;
+                            background:rgba(68, 68, 68, 0.6);
+                        }
+                        transition: ease-in 0.2s;
+                        h1 {
+                            visibility: visible;
+                        }
+                    }
                 }
 
-                .firework {
-                    grid-area: fire;
-                    //float: left;
+                .frontend {
+                    grid-area: blu;
                     content: '';
-                    background: url('../assets/fireworks.png');
+                    background: url('../assets/frontend.png');
                 }
-                .green {
+
+                .auto {
+                    grid-area: redd;
+                    content: '';
+                    background: url('../assets/rest.png');
+                    justify-content: center;
+                }
+
+                
+                .backend {
                     grid-area: gren;
                     //float: left;
                     content: '';
-                    background: url('../assets/portrait.png');
+                    background: url('../assets/backend.png');
                 }
-                .yellow {
-                    grid-area: yell;
-                    content: '';
-                    background: url('../assets/portrait.png');
-                }
+                
             }
             .wrapper {
                 position: relative;
                 z-index: 3;
                 display: grid;
-                height: $myWidth;
+                width: 100%;
 
                 .lower {
                     display: grid;
                     position: absolute;
                     width: $myWidth;
-                    grid-template-areas: 'blu redd oof';
+                    grid-template-areas: 'fire yell oof';
                     grid-template-columns: 1fr 1fr 1fr;
 
                     transform: translate3d(0, 0, 0);
                     //position: absolute;
                     z-index: 20;
+
+                    .pic {
+                        width: 300px;
+                        height: 200px;
+                        margin-right: 20px;
+                        margin-bottom: 20px;
+    
+                        &.mobile {
+                            .overlay {
+                                position: absolute;
+                                background:rgba(68, 68, 68, 0.6);
+                            }
+                            transition: ease-in 0.2s;
+                            h1 {
+                                visibility: visible;
+                            }
+                        }
+                    }
 
                     @include fade;
 
@@ -123,23 +176,23 @@ main {
                         transform: translate3d(0, ($barHeight + 20px), 0);
                     }
 
-
-                    .blue {
-                        grid-area: blu;
+                    .firework {
+                        grid-area: fire;
+                        //float: left;
                         content: '';
-                        background: url('../assets/portrait.png');
+                        background: url('../assets/fireworks.png');
                     }
 
-                    .red {
-                        grid-area: redd;
+                    .frequency {
+                        grid-area: yell;
                         content: '';
-                        background: url('../assets/portrait.png');
+                        background: url('../assets/ard.png');
                     }
 
-                    .oof {
+                    .path {
                         grid-area: oof;
                         content: '';
-                        background: url('../assets/portrait.png');
+                        background: url('../assets/path.png');
                     }
                 }
 
@@ -168,17 +221,31 @@ main {
                         height: $barHeight;
                         grid-template-areas: 'img txt';
                         grid-template-columns: 1fr 1fr;
+
+                        
                     }
 
                     .text {
                         grid-area: txt;
-                        text-align: right;
+                        text-align: left;
                         content: '';
                         position: relative;
+                        padding-left: 30px;
+                        width: 500px;
+                        float: right;
+                        //padding-right: 50px;
                         //z-index: inherit + 1;
                         visibility: hidden;
 
-                        color: red;
+                        color: white;
+                        
+
+                        a {
+                            margin-left: auto;
+                            margin-right: auto;
+                            text-align: center;
+                        }
+                        
                     }
                     
 
@@ -213,41 +280,61 @@ main {
                         }    
                     }
 
-                    .blue {
+                    .frontend {
                         max-width: 100%;
                         max-height: 100%;
                         display: block;
                         .img {
-                            background-image: url('../assets/fireworks_detailed.png');
+                            background-image: url('../assets/jscode.png');
                         }    
                     }
 
-                    .green {
-                        background-color: green;
-                        position: absolute;
-                        height: 180px;
-                        width: 500px;
+                    .backend {
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: block;
+                        .img {
+                            background-image: url('../assets/node.png');
+                        }    
                     }
 
-                    .yellow {
-                        background-color: yellow;
-                        position: absolute;
-                        height: 180px;
-                        width: 500px;
+                    .path {
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: block;
+                        .img {
+                            background-image: url('../assets/gref.png');
+                        }    
                     }
 
-                    .red {
-                        background-color: red;
-                        position: absolute;
-                        height: 180px;
-                        width: 500px;
+                    .auto {
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: block;
+                        .img {
+                            background-image: url('../assets/books.png');
+                        }    
                     }
 
-                    .oof {
-                        background-color: #42059d;
-                        position: absolute;
-                        height: 180px;
-                        width: 500px;
+                    .frequency {
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: block;
+                        //visibility: hidden;
+                        .img {
+                            background-image: url('../assets/ardui.png');
+                        } 
+                        &:before {
+                            content: '';
+                            position: absolute;
+
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
+
+                            background-color: $primary-color;
+                        }   
                     }
 
                     &.active {
@@ -261,7 +348,6 @@ main {
                     .bars {
                         visibility: hidden;
                         transform: translate3d(0, 200px, 0);
-                        
                     }
                     .lower {
                         transform: translate3d(0, 0, 0);

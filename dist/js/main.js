@@ -26,11 +26,7 @@ const menuBranding = document.querySelector('.menu-branding');
 
 const navItems = document.querySelectorAll('.nav-item');
 
-const nightBtn = document.getElementById('nice');
-const mainPart = document.getElementById('home');
-
 let showMenu = false;
-let nightMode = true;
 
 menuBtn.addEventListener('click', () => {
     if(!showMenu) {
@@ -52,16 +48,28 @@ menuBtn.addEventListener('click', () => {
     }
 });
 
-nightBtn.addEventListener('click', () => {
-    if (!nightMode) {
-        mainPart.classList.add('night');
-        mainPart.classList.remove('day');
-        nightBtn.className = "fas fa-lightbulb fa-2x";
-        nightMode = !nightMode;
+const iconBtns = document.querySelector('.icons')
+const mailBtn  = iconBtns.querySelector('.mail');
+const teleBtn  = iconBtns.querySelector('.phone');
+
+const info = document.querySelector('.info');
+const mail = info.querySelector('.mail');
+const tele = info.querySelector('.tele');
+
+mailBtn.addEventListener('click', () => {
+    if (mail.classList.contains('show')) {
+        mail.classList.remove('show');
     } else {
-        mainPart.classList.remove('night');
-        mainPart.classList.add('day');
-        nightBtn.className = "far fa-lightbulb fa-2x";
-        nightMode = !nightMode;
+        mail.classList.add('show');
+        tele.classList.remove('show');
+    }
+});
+
+teleBtn.addEventListener('click', () => {
+    if (tele.classList.contains('show')) {
+        tele.classList.remove('show');
+    } else {
+        tele.classList.add('show');
+        mail.classList.remove('show');
     }
 });

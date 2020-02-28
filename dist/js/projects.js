@@ -3,6 +3,7 @@ const bars = document.querySelectorAll('.bar');
 
 let anythingOpen = false;
 
+
 function litPics() {
     pics.forEach((picture) => {
         if (picture.classList.contains('dim')) {
@@ -12,7 +13,20 @@ function litPics() {
     });
 }
 
+if (window.innerWidth < 600) {
+pics.forEach(pic => {
+    pic.classList.add('mobile');
+});
+document.querySelector('.backend').onclick = () => window.location = 'https://github.com/miningape/my-portfolio';
+document.querySelector('.auto').onclick = () => window.location = 'https://github.com/miningape';
+document.querySelector('.frontend').onclick = () => window.location = '';
+document.querySelector('.firework').onclick = () => window.location = 'https://github.com/miningape/Fireworks';
+document.querySelector('.frequency').onclick = () => window.location = 'https://github.com/miningape/sketch_may30a';
+} else {
 pics.forEach((pic) => {
+    if (pic.classList.contains('mobile')) {
+        pic.classList.remove('dim');
+    }
     pic.addEventListener('click', () => {
         if (anythingOpen) {
             document.querySelector('.wrapper').classList.add('transitioning');
@@ -58,3 +72,4 @@ pics.forEach((pic) => {
         }
     });
 });
+}
