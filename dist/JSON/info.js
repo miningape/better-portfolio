@@ -1,15 +1,15 @@
 
 const skillSheet = {
     sql : {
-        proficiency : "2",
+        proficiency : "3",
         header : "SQL",
-        text : "Basic Knowledge of how SQL works"
+        text : "I understand the language but I'm less practised in it that mongoDB"
     },
 
     mongo : {
-        proficiency : "3",
+        proficiency : "4",
         header : "MongoDB",
-        text : "I know a fair amount about how mongoDB works"
+        text : "I think I'm proficienct at this database, and I understand how it works well"
     },
 
     express : {
@@ -21,42 +21,42 @@ const skillSheet = {
     node : {
         proficiency : "3",
         header : "Node.JS",
-        text : "I'm pretty good at node, of course there is some stuff I need to learn but... "
+        text : "I'd like to think I'm alright at Node but I feel I still have a lot more to learn"
     },
 
     html : {
         proficiency : "5",
         header : "HTML & CSS",
-        text : "I have a good working knowledge of how HTML and CSS work together to produce a nice webpage"
+        text : "I have a good working knowledge of how HTML and CSS work together to produce a webpage"
     },
 
     sass : {
         proficiency : "4",
         header : "Sassy CSS",
-        text : "I'm very proficient with this \"compile to CSS\" language, it makes it a lot easier for me to script up more complicated ideas and webpages"
+        text : "I'm very good with this \"compile to CSS\" language, it makes it a lot easier for me to script up more complicated ideas and webpages"
     },
 
     cpp : {
         proficiency : "3",
         header : "C++",
-        text : "I'm fairly proficient at using C++ to get what I want done, I'm primarily interested in it's ability to make games and as such I have mainly worked with general programming and graphics programming using things like SFML, SDL and OpenGL"
+        text : "I'm fairly proficient at using C++ to get what I want done. I definately have a lot more to learn, but I really enjoy using C++"
     },
     java : {
-        proficiency : "3",
+        proficiency : "4",
         header : "Java",
-        text : "This was the first real language I ever learned, and it is what my university has chosen to use..."
+        text : "This was the first real language I ever learned, and it's what my university has chosen to teach us. So I've arguably used Java the most."
     },
 
     python : {
         proficiency : "5",
         header : "Python",
-        text : "I'm great at this wonderful little language, I like it because it is fast and easy to write code for, and I've practiced a lot"
+        text : "I'm great at this wonderful little language, and its my go-to for any coding challenges or questions"
     },
 
     javasc : {
         proficiency : "4",
         header : "JavaScript",
-        text : "Very similar to python for me, I feel there is a lot more I do not know however there is a lot more that the language has to offer at face value"
+        text : "I think I'm really good at JavaScript but I feel there's more depth to it because of how many frameworks and libraries there are that change/add to the language"
     }
     
 };
