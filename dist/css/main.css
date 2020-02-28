@@ -467,6 +467,7 @@ header {
   color: #ff943d; }
 
 main {
+  overflow: hidden;
   padding: 4rem;
   height: 100%; }
   main .icons {
@@ -476,8 +477,6 @@ main {
       transition: all 0.45s ease; }
       main .icons a:hover {
         color: #ff943d; }
-  main .name {
-    margin-top: 15vh; }
   main#home {
     overflow: hidden; }
     main#home h1 {

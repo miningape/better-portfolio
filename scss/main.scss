@@ -49,6 +49,7 @@ header {
 }
 
 main {
+    overflow: hidden;
     padding: 4rem;
     height: 100%;
 
@@ -62,10 +63,6 @@ main {
                 color: $secondary-color;
             }
         }
-    }
-
-    .name {
-        margin-top: 15vh;
     }
     
     &.night {
