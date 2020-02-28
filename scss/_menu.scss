@@ -91,9 +91,9 @@ $my-opacity: 0.97;
             z-index: 30;
             width: 320px;
             height: 339px;
-            background: url('../assets/portrait.png');
+            background: url('/assets/portrait.png');
             border-radius: 50%;
-            border: solid 3px set-text-color($primary-color);
+            border: solid 3px set-text-color( $primary-color);
             opacity: 1;
         }
     }

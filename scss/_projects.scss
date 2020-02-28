@@ -109,13 +109,13 @@ main {
                 .frontend {
                     grid-area: blu;
                     content: '';
-                    background: url('../assets/frontend.png');
+                    background: url('/assets/frontend.png');
                 }
 
                 .auto {
                     grid-area: redd;
                     content: '';
-                    background: url('../assets/rest.png');
+                    background: url('/assets/rest.png');
                     justify-content: center;
                 }
 
@@ -124,7 +124,7 @@ main {
                     grid-area: gren;
                     //float: left;
                     content: '';
-                    background: url('../assets/backend.png');
+                    background: url('/assets/backend.png');
                 }
                 
             }
@@ -180,19 +180,19 @@ main {
                         grid-area: fire;
                         //float: left;
                         content: '';
-                        background: url('../assets/fireworks.png');
+                        background: url('/assets/fireworks.png');
                     }
 
                     .frequency {
                         grid-area: yell;
                         content: '';
-                        background: url('../assets/ard.png');
+                        background: url('/assets/ard.png');
                     }
 
                     .path {
                         grid-area: oof;
                         content: '';
-                        background: url('../assets/path.png');
+                        background: url('/assets/path.png');
                     }
                 }
 
@@ -276,7 +276,7 @@ main {
                         max-height: 100%;
                         display: block;
                         .img {
-                            background-image: url('../assets/fireworks_detailed.png');
+                            background-image: url('/assets/fireworks_detailed.png');
                         }    
                     }
 
@@ -285,7 +285,7 @@ main {
                         max-height: 100%;
                         display: block;
                         .img {
-                            background-image: url('../assets/jscode.png');
+                            background-image: url('/assets/jscode.png');
                         }    
                     }
 
@@ -294,7 +294,7 @@ main {
                         max-height: 100%;
                         display: block;
                         .img {
-                            background-image: url('../assets/node.png');
+                            background-image: url('/assets/node.png');
                         }    
                     }
 
@@ -303,7 +303,7 @@ main {
                         max-height: 100%;
                         display: block;
                         .img {
-                            background-image: url('../assets/gref.png');
+                            background-image: url('/assets/gref.png');
                         }    
                     }
 
@@ -312,7 +312,7 @@ main {
                         max-height: 100%;
                         display: block;
                         .img {
-                            background-image: url('../assets/books.png');
+                            background-image: url('/assets/books.png');
                         }    
                     }
 
@@ -322,7 +322,7 @@ main {
                         display: block;
                         //visibility: hidden;
                         .img {
-                            background-image: url('../assets/ardui.png');
+                            background-image: url('/assets/ardui.png');
                         } 
                         &:before {
                             content: '';
