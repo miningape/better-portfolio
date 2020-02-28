@@ -57,7 +57,7 @@
       z-index: 30;
       width: 320px;
       height: 339px;
-      background: url("../assets/portrait.png");
+      background: url("/assets/portrait.png");
       border-radius: 50%;
       border: solid 3px white;
       opacity: 1; }
@@ -114,7 +114,7 @@
     height: 25vh;
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
-      background: url(../assets/img_small.png);
+      background: url("/assets/img_small.png");
       height: 150px;
       width: 150px; }
   .about-info.about-info {
@@ -229,16 +229,16 @@ main#projects {
       main#projects .pics .upper .frontend {
         grid-area: blu;
         content: '';
-        background: url("../assets/frontend.png"); }
+        background: url("/assets/frontend.png"); }
       main#projects .pics .upper .auto {
         grid-area: redd;
         content: '';
-        background: url("../assets/rest.png");
+        background: url("/assets/rest.png");
         justify-content: center; }
       main#projects .pics .upper .backend {
         grid-area: gren;
         content: '';
-        background: url("../assets/backend.png"); }
+        background: url("/assets/backend.png"); }
     main#projects .pics .wrapper {
       position: relative;
       z-index: 3;
@@ -275,15 +275,15 @@ main#projects {
         main#projects .pics .wrapper .lower .firework {
           grid-area: fire;
           content: '';
-          background: url("../assets/fireworks.png"); }
+          background: url("/assets/fireworks.png"); }
         main#projects .pics .wrapper .lower .frequency {
           grid-area: yell;
           content: '';
-          background: url("../assets/ard.png"); }
+          background: url("/assets/ard.png"); }
         main#projects .pics .wrapper .lower .path {
           grid-area: oof;
           content: '';
-          background: url("../assets/path.png"); }
+          background: url("/assets/path.png"); }
       main#projects .pics .wrapper .bars {
         display: grid;
         position: absolute;
@@ -339,37 +339,37 @@ main#projects {
           max-height: 100%;
           display: block; }
           main#projects .pics .wrapper .bars .firework .img {
-            background-image: url("../assets/fireworks_detailed.png"); }
+            background-image: url("/assets/fireworks_detailed.png"); }
         main#projects .pics .wrapper .bars .frontend {
           max-width: 100%;
           max-height: 100%;
           display: block; }
           main#projects .pics .wrapper .bars .frontend .img {
-            background-image: url("../assets/jscode.png"); }
+            background-image: url("/assets/jscode.png"); }
         main#projects .pics .wrapper .bars .backend {
           max-width: 100%;
           max-height: 100%;
           display: block; }
           main#projects .pics .wrapper .bars .backend .img {
-            background-image: url("../assets/node.png"); }
+            background-image: url("/assets/node.png"); }
         main#projects .pics .wrapper .bars .path {
           max-width: 100%;
           max-height: 100%;
           display: block; }
           main#projects .pics .wrapper .bars .path .img {
-            background-image: url("../assets/gref.png"); }
+            background-image: url("/assets/gref.png"); }
         main#projects .pics .wrapper .bars .auto {
           max-width: 100%;
           max-height: 100%;
           display: block; }
           main#projects .pics .wrapper .bars .auto .img {
-            background-image: url("../assets/books.png"); }
+            background-image: url("/assets/books.png"); }
         main#projects .pics .wrapper .bars .frequency {
           max-width: 100%;
           max-height: 100%;
           display: block; }
           main#projects .pics .wrapper .bars .frequency .img {
-            background-image: url("../assets/ardui.png"); }
+            background-image: url("/assets/ardui.png"); }
           main#projects .pics .wrapper .bars .frequency:before {
             content: '';
             position: absolute;
@@ -431,7 +431,7 @@ body {
   font-family: 'Raleway', 'sans-serif';
   line-height: 1.5; }
   body#bg-img {
-    background: url(../assets/background.jfif);
+    background: url("/assets/background.jfif");
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img:after {
