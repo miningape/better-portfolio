@@ -275,15 +275,15 @@ main#projects {
         main#projects .pics .wrapper .lower .firework {
           grid-area: fire;
           content: '';
-          background: url(/assets/fireworks.PNG); }
+          background: url(../assets/fireworks.PNG); }
         main#projects .pics .wrapper .lower .frequency {
           grid-area: yell;
           content: '';
-          background: url(/assets/ard.png); }
+          background: url(../assets/ard.png); }
         main#projects .pics .wrapper .lower .path {
           grid-area: oof;
           content: '';
-          background: url(/assets/path.png); }
+          background: url(../assets/path.png); }
       main#projects .pics .wrapper .bars {
         display: grid;
         position: absolute;
