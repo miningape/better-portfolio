@@ -180,19 +180,19 @@ main {
                         grid-area: fire;
                         //float: left;
                         content: '';
-                        background: url(../assets/fireworks.PNG);
+                        background: url(/assets/fireworks.PNG);
                     }
 
                     .frequency {
                         grid-area: yell;
                         content: '';
-                        background: url(../assets/ard.png);
+                        background: url(/assets/ard.png);
                     }
 
                     .path {
                         grid-area: oof;
                         content: '';
-                        background: url(../assets/path.png);
+                        background: url(/assets/path.png);
                     }
                 }
 
