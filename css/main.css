@@ -431,7 +431,7 @@ body {
   font-family: 'Raleway', 'sans-serif';
   line-height: 1.5; }
   body#bg-img {
-    background: url("/assets/background.jfif");
+    background: url(../assets/background.jfif);
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img:after {
