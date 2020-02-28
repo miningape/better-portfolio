@@ -63,6 +63,10 @@ main {
             }
         }
     }
+
+    .name {
+        margin-top: 15vh;
+    }
     
     &.night {
         $primary-color: #444;
@@ -75,7 +79,7 @@ main {
     &#home {
         overflow:hidden;
         h1 {
-            margin-top: 15vh;
+            margin-top: 20vh;
         }
     }
 
