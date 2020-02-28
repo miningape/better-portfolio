@@ -275,15 +275,15 @@ main#projects {
         main#projects .pics .wrapper .lower .firework {
           grid-area: fire;
           content: '';
-          background: url(../assets/fireworks.png); }
+          background: url(/assets/fireworks.PNG); }
         main#projects .pics .wrapper .lower .frequency {
           grid-area: yell;
           content: '';
-          background: url(../assets/ard.png); }
+          background: url(/assets/ard.png); }
         main#projects .pics .wrapper .lower .path {
           grid-area: oof;
           content: '';
-          background: url(../assets/path.png); }
+          background: url(/assets/path.png); }
       main#projects .pics .wrapper .bars {
         display: grid;
         position: absolute;
@@ -339,19 +339,19 @@ main#projects {
           max-height: 100%;
           display: block; }
           main#projects .pics .wrapper .bars .firework .img {
-            background-image: url(../assets/fireworks_detailed.png); }
+            background-image: url(../assets/fireworked.png); }
         main#projects .pics .wrapper .bars .frontend {
           max-width: 100%;
           max-height: 100%;
           display: block; }
           main#projects .pics .wrapper .bars .frontend .img {
-            background-image: url(../assets/jscode.png); }
+            background-image: url(../assets/jscode.PNG); }
         main#projects .pics .wrapper .bars .backend {
           max-width: 100%;
           max-height: 100%;
           display: block; }
           main#projects .pics .wrapper .bars .backend .img {
-            background-image: url(../assets/node.png); }
+            background-image: url(../assets/node.PNG); }
         main#projects .pics .wrapper .bars .path {
           max-width: 100%;
           max-height: 100%;
