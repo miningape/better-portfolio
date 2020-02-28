@@ -13,13 +13,13 @@ function litPics() {
     });
 }
 
-if (window.innerWidth < 600) {
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 pics.forEach(pic => {
     pic.classList.add('mobile');
 });
 document.querySelector('.backend').onclick = () => window.location = 'https://github.com/miningape/my-portfolio';
 document.querySelector('.auto').onclick = () => window.location = 'https://github.com/miningape';
-document.querySelector('.frontend').onclick = () => window.location = '';
+document.querySelector('.frontend').onclick = () => window.location = 'https://github.com/miningape/better-portfolio';
 document.querySelector('.firework').onclick = () => window.location = 'https://github.com/miningape/Fireworks';
 document.querySelector('.frequency').onclick = () => window.location = 'https://github.com/miningape/sketch_may30a';
 } else {
